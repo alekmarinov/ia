@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<makefile>
+	<set var="HAVE_JPEGLIB" conf="WITH_JPEG=='1'">1</set>
+	
+	<dll id="ia" template="simple">
+		<include>$(IA_INC)</include>
+		<sources>
+			$(IA_SRC)/ia_bezier.c
+			$(IA_SRC)/ia_common.c
+			$(IA_SRC)/ia_gif.c
+			$(IA_SRC)/ia_image.c
+			$(IA_SRC)/ia_jpeg.c
+			$(IA_SRC)/ia_line.c
+			$(IA_SRC)/ia_signal.c
+			$(IA_SRC)/ia_tiff.c
+			$(IA_SRC)/ia_vector.c
+			$(IA_SRC)/algo/ia_binarize.c
+			$(IA_SRC)/algo/ia_contours.c
+			$(IA_SRC)/algo/ia_convolution.c
+			$(IA_SRC)/algo/ia_distance_transform.c
+			$(IA_SRC)/algo/ia_fft.c
+			$(IA_SRC)/algo/ia_morphology.c
+			$(IA_SRC)/algo/ia_otsu.c
+		</sources>
+		<define cond="FORMAT in ['msvs2003prj','msvs2005prj','msvs2008prj']">_CRT_SECURE_NO_WARNINGS</define>
+		<if cond="HAVE_JPEGLIB=='1'">
+			<include>$(JPEG_INC)</include>
+			<library>jpeg</library>
+			<define>HAVE_JPEGLIB</define>
+		</if>
+	</dll>
+</makefile>
