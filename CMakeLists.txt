@@ -44,4 +44,4 @@ if (TIFF_FOUND)
 ENDIF(TIFF_FOUND)
 
 
-SUBDIRS(src)
+SUBDIRS(include src)
