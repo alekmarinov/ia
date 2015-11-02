@@ -1,6 +1,6 @@
 # CMakeLists.txt
 cmake_minimum_required(VERSION 2.8)
-SET(PROJECT_NAME libia)
+SET(PROJECT_NAME ia)
 PROJECT (${PROJECT_NAME})
 OPTION(BUILD_SHARED_LIBS "Should shared libraries be the default?" YES )
 SET(PLATFORM linux)

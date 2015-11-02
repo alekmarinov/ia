@@ -1,5 +1,5 @@
 # src/CMakeLists.txt
-
+cmake_minimum_required(VERSION 2.8)
 SET(${PROJECT_NAME}_SOURCES
 	ia_bezier.c
 	ia_common.c
